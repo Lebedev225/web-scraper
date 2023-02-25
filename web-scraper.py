@@ -42,7 +42,8 @@ while True:
         # Twilio credentials and client set up
         account_sid = os.environ['TWILIO_ACCOUNT_SID']
         auth_token = os.environ['TWILIO_AUTH_TOKEN']
-        my_number = os.environ['TWILIO_NUMBER']
+        twilio_number = os.environ['TWILIO_NUMBER']
+        my_number = os.environ['PERSONAL_NUMBER']
 
         client = Client(account_sid, auth_token)
 
@@ -50,7 +51,7 @@ while True:
         message = client.messages \
             .create(
                 body=f"{product_name} is back in Stock in {local_store[0]}, hurry up before it's gone!",
-                from_='+12708355098',
+                from_=twilio_number,
                 to=my_number
             )
         # Testing
