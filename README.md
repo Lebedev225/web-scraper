@@ -1,4 +1,4 @@
-# Web Scraper
+# Adafruit.com Web Scraper
 
 Web scraper takes any Adafruit product and sends a text message followed by a call when the target product becomes available in stock.
 
@@ -6,23 +6,8 @@ Web scraper takes any Adafruit product and sends a text message followed by a ca
 
 Make sure your environment has the following installed:
 
-<!-- Beautiful Soup for scraping -->
-
-from bs4 import BeautifulSoup
-import requests
-
-<!-- Twilio to send text message -->
-
-from twilio.rest import Client
-import os
-
- <!-- .env for Twilio credentials -->
-
-from dotenv import load_dotenv
-
- <!-- Time for the delay -->
-
-import time
+-   Beautiful Soup
+-   Twilio
 
 ## Usage
 
