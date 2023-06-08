@@ -1,20 +1,35 @@
 # Web Scraper
 
-Web scraper takes any MicroCenter product and sends an email when it becomes available in stock.
+Web scraper takes any Adafruit product and sends a text message followed by a call when the target product becomes available in stock.
 
 ## Installation
 
 Make sure your environment has the following installed:
 
--   Beautiful Soup 4
--   Twilio
--   Dotenv
+<!-- Beautiful Soup for scraping -->
+
+from bs4 import BeautifulSoup
+import requests
+
+<!-- Twilio to send text message -->
+
+from twilio.rest import Client
+import os
+
+ <!-- .env for Twilio credentials -->
+
+from dotenv import load_dotenv
+
+ <!-- Time for the delay -->
+
+import time
 
 ## Usage
 
 ```python
-# Change this line with the url of the product you are interested in
-url = "https://www.microcenter.com/product/637834/raspberry-pi-4-model-b-4gb-ddr4?rd=1"
+
+# You will be prompted for an URL of the target product
+URL = input("Paste the URL of the target product from the Adafruit.com website: ")
 
 # Change the Twilio credentials
 account_sid = os.environ['TWILIO_ACCOUNT_SID']
@@ -25,10 +40,23 @@ my_number = os.environ['PERSONAL_NUMBER']
 # Customize the text message
         message = client.messages \
             .create(
-                body=f"{product_name} is back in Stock in {local_store[0]}, hurry up before it's gone!",
+                body=f"{product_name} {availability_message} ",
                 from_=twilio_number,
                 to=my_number
             )
+
+# Customize the robo-call
+        call = client.calls.create(
+            twiml=f"<Response><Say>{product_name} is back in Stock on Adafruit, hurry up!</Say></Response>",
+            from_=twilio_number,
+            to=my_number
+        )
+
+# Edit the interval between requests (don't abuse it!)
+time.sleep(300)
+
+# Note - Use twilio-test.py to trst and troubleshoot Twilio service
+
 ```
 
 ## Contributing
