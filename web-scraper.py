@@ -13,7 +13,7 @@ import time
 load_dotenv()
 
 # Set the interval time
-INTERVAL = 300
+INTERVAL = 30
 
 
 # Twilio credentials and client set up
