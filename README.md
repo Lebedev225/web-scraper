@@ -1,7 +1,7 @@
 # Adafruit.com Stock Alert
 
-Web scraper takes any Adafruit product and sends a text message followed by a call when the target product becomes available in stock.  
-(I used it to snag a Raspberry Pi 4 and it worked like a charm 😇)
+The web scraper monitors a selected Adafruit product and sends a text message followed by a phone call when the desired item is back in stock.  
+Note: It only took me two days to snag a Raspberry Pi 4 at MSRP 😇
 
 ## Installation
 
