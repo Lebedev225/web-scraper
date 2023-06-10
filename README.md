@@ -50,7 +50,7 @@ my_number = os.environ['PERSONAL_NUMBER']
         )
 
 # Edit the interval between requests (don't abuse it!)
-time.sleep(300)
+time.sleep(30)
 
 # Note - Use twilio-test.py to test and troubleshoot Twilio service
 ```
