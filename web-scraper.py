@@ -93,6 +93,11 @@ def send_message(item_availability, get_name):
         # Call confirmation
         print("Success")
 
+    # Timestamp
+    t = time.localtime()
+    current_time = time.strftime("%H:%M:%S", t)
+    print(current_time)
+
 
 # Prompt user for an URL with the target product
 URL = input("Paste the URL of the target product from the Adafruit.com website: ")
