@@ -1,4 +1,4 @@
-# Adafruit.com Stock Alert
+# Adafruit.com Restock Alert
 
 The web scraper monitors a selected Adafruit product and sends a text message followed by a phone call when the desired item is back in stock.  
 Note: It only took me two days to snag a Raspberry Pi 4 at MSRP 😇
