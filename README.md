@@ -3,6 +3,8 @@
 The web scraper monitors a selected Adafruit product and sends a text message followed by a phone call when the desired item is back in stock.  
 Note: It only took me two days to snag a Raspberry Pi 4 at MSRP 😇
 
+Note: Check out https://rpilocator.com/ for the last restock date
+
 ## Installation
 
 Make sure your environment has the following installed:
